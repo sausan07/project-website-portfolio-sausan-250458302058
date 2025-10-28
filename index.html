@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Tailwind</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="icon"
+      href="https://i.pinimg.com/1200x/2e/57/36/2e573659686781c1c41a00ff2f9882d8.jpg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barriecito&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .font-utama {
+      font-family: "Bricolage Grotesque", sans-serif;
+    }
+
+    .text-color {
+      color: #F8F3CE;
+
+    }
+  </style>
+  <body>
+    <!-- aria-label itu biar webnya bisa dipahami oleh screenreader/org disabilitas. dan lebih profesional -->
+    <nav
+      class="sticky top-0 z-50 bg-[#57564F] backdrop-blur border-b border-slate-300 font-utama"
+      aria-label="Primary">
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- untuk menu leptop -->
+        <div class="flex items-center justify-between h-16">
+          <a
+            href="#aboutMe"
+            class="flex items-center text-white text-xl font-utama uppercase tracking-wider font-bold"
+            >Holmes.</a
+          >
+
+          <button
+            id="hamburger"
+            class="md:hidden px-2 pt-2 pb-2 mb-1 rounded hover:bg-slate-800 focus:outline-none focus:ring-1 focus:ring-[#DDDAD0] focus:ring-offset-0"
+            aria-expanded="false"
+            aria-controls="main-menu"
+            aria-label="Toggle menu"
+          >
+            <svg
+              id="icon-open"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+
+            <svg
+              id="icon-close"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          <div id="main-menu" class="hidden md:flex md:items-center md:gap-2">
+            <div
+              class="flex flex-col md:flex-row md:items-center md:gap-2 text-right md:text-left"
+            >
+              <a
+                href="#aboutMe"
+                class="px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+                >About Me</a
+              >
+              <a
+                href="#whatIDo"
+                class="px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+                >What i do</a
+              >
+              <a
+                href="#portofolio"
+                class="px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+                >Portfolio</a
+              >
+              <a
+                href="#skills"
+                class="px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+                >Skills</a
+              >
+              <a
+                href="#blog"
+                class="px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+                >Blog</a
+              >
+              <a
+                href="#contactMe"
+                class="bg-[#F8F3CE] hover:bg-[#BCA88D] rounded-xl px-4 py-2 font-utama font-bold justify-center items-center"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+
+          <!-- menu untuk HP -->
+          <div
+            id="mobile-panel"
+            class="md:hidden hidden border-t border-slate-800 py-2"
+          >
+            <a
+              href="#aboutMe"
+              class="block px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+              >About Me</a
+            >
+            <a
+              href="#whatIDo"
+              class="block px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+              >What i do</a
+            >
+            <a
+              href="#portofolio"
+              class="block px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+              >Portfolio</a
+            >
+            <a
+              href="#skills"
+              class="block px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+              >Skills</a
+            >
+            <a
+              href="#blog"
+              class="block px-3 py-2 text-slate-300 hover:text-[#BCA88D] uppercase font-utama"
+              >Blog</a
+            >
+            <a
+              href="#contactMe"
+              class="block bg-[#F8F3CE] hover:bg-[#BCA88D] rounded-xl px-4 py-2 font-utama font-bold justify-center items-center"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="aboutMe" class="bg-[#7A7A73]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center ">
+        <div class="order-2 lg:order-2 ring-4 ring-[#57564F] sm:ring-7 rounded-2xl shadow-2xl overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 ">
+          <img src="src/kk.jpg" alt="" class="w-full h-150 object-cover"/>
+        </div>
+
+        <div class="order-1 lg:order-1">
+          <h1 class="font-utama text-5xl font-bold leading-tight text-white">Hello, I'm <span class="text-color">Enola</span></h1>
+          <h2 class="font-utama text-3xl font-semibold text-slate-200 ">Web / Mobile Developer</h2>
+          <p class="mt-5 leading-relaxed text-slate-200 font-utama">A passionate and driven young woman exploring the ever-evolving world of technology. Currently learning programming, and web creation, she combines creativity, problem-solving skills, and innovation to bring ideas to life in the digital space.</p>
+            <!-- flex wrap biar otomatis cardnya turun, biar g numpuk. tailwind itu nowrap -->
+          <div class="mt-6 flex flex-wrap items-center gap-4">
+            <a href="" class="inline-flex items-center justify-center rounded-lg bg-slate-800 hover:bg-[#BCA88D] text-white px-4 py-3 text-2xl transition-transform duration-300 ease-in-out hover:scale-105"><i class="fa-brands fa-linkedin"></i></a>
+
+            <a href="" class="inline-flex items-center justify-center rounded-lg bg-slate-800 hover:bg-[#BCA88D] text-white px-4 py-3 text-2xl transition-transform duration-300 ease-in-out hover:scale-105"><i class="fa-brands fa-github"></i></a>
+
+            <a href="" class="inline-flex items-center justify-center rounded-lg bg-slate-800 hover:bg-[#BCA88D] text-white px-4 py-3 text-2xl transition-transform duration-300 ease-in-out hover:scale-105"><i class="fa-brands fa-instagram"></i></a>
+
+            <a href="" class="inline-flex items-center justify-center rounded-lg bg-slate-800 hover:bg-[#BCA88D] text-white px-4 py-3 text-2xl transition-transform duration-300 ease-in-out hover:scale-105"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+
+    <section id="whatIDo" class="bg-[#57564F]">
+      <div class="max-w-full mx-auto px-20 md-px-8 py-20 border-t border-slate-300">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-300 font-utama underline underline-offset-8 decoration-[#F8F3CE] decoration-4 uppercase tracking-widest ">What I Do</h2>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-6 transition-transform duration-300 ease-in-out hover:scale-105">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 grid rounded-full bg-slate-800 text-white place-items-center">
+                <i class="fa-solid fa-desktop"></i>
+              </div>
+              <h3 class="text-slate-800 font-utama font-bold text-lg tracking-wider">Web Design</h3>
+            </div>
+            <p class="text-slate-700 font-utama">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quasi.</p>
+          </div>
+
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-6 transition-transform duration-300 ease-in-out hover:scale-105">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 grid rounded-full bg-slate-800 text-white place-items-center">
+                <i class="fa-solid fa-mobile"></i>
+              </div>
+              <h3 class="text-slate-800 font-utama font-bold text-lg tracking-wider">App Design</h3>
+            </div>
+            <p class="text-slate-700 font-utama">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quasi.</p>
+          </div>
+
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-6 transition-transform duration-300 ease-in-out hover:scale-105">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 grid rounded-full bg-slate-800 text-white place-items-center">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <h3 class="text-slate-800 font-utama font-bold text-lg tracking-wider">Branding</h3>
+            </div>
+            <p class="text-slate-700 font-utama">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quasi.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="portofolio" class="bg-[#7A7A73]">
+      <div class="max-w-full mx-auto px-20 md-px-8 py-20 border-t border-slate-300">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-300 font-utama underline underline-offset-8 decoration-[#F8F3CE] decoration-4 uppercase tracking-widest ">Portfolio</h2>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6">
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-6 transition-transform duration-300 ease-in-out hover:scale-105">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="">
+                <img src="src/ini.jpg" alt="" class="w-full h-full object-cover rounded-3xl">
+              </div>
+            </div>
+            <h3 class="font-utama font-semibold text-center">Web Adaaja</h3>
+            <p class="text-slate-700 font-utama text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quasi.</p>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-6 transition-transform duration-300 ease-in-out hover:scale-105">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="">
+                <img src="src/ini.jpg" alt="" class="w-full h-full object-cover rounded-3xl">
+              </div>
+            </div>
+            <h3 class="font-utama font-semibold text-center">Web Adaaja</h3>
+            <p class="text-slate-700 font-utama text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quasi.</p>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-6 transition-transform duration-300 ease-in-out hover:scale-105">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="">
+                <img src="src/ini.jpg" alt="" class="w-full h-full object-cover rounded-3xl">
+              </div>
+            </div>
+            <h3 class="font-utama font-semibold text-center">Web Adaaja</h3>
+            <p class="text-slate-700 font-utama text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quasi.</p>
+          </div>
+          </a>
+
+      </div>
+
+    </section>
+
+    <section id="skills" class="bg-[#57564F]">
+      <div class="max-w-full mx-auto px-20 md-px-8 py-20 border-t border-slate-300">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-300 font-utama underline underline-offset-8 decoration-[#F8F3CE] decoration-4 uppercase tracking-widest ">My Skills</h2>
+        </div>
+
+        <h4 class="font-utama font-bold text-white text-3xl leading-10">Web Developer</h4>
+        <p class="font-utama text-white">Saya memiliki skill seperti berikut</p>
+
+        <div class="grid grid-cols-4 flex-wrap gap-6 mt-5">
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105">
+              <div class="">
+                <img src="src/ai.png" alt="" class="w-50 h-50 items-center justify-center rounded-3xl">
+              </div>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105">
+              <div class="">
+                <img src="src/1.png" alt="" class="w-50 h-50 items-center justify-center rounded-3xl">
+              </div>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105">
+              <div class="">
+                <img src="src/html.png" alt="" class="w-50 h-50 items-center justify-center rounded-3xl">
+              </div>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105">
+              <div class="">
+                <img src="src/js.png" alt="" class="w-50 h-50 items-center justify-center rounded-3xl">
+              </div>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105">
+              <div class="">
+                <img src="src/xd.png" alt="" class="w-50 h-50 items-center justify-center rounded-3xl">
+              </div>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105">
+              <div class="">
+                <img src="src/burger.png" alt="" class="w-70 h-50 items-center justify-center rounded-3xl">
+              </div>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105">
+              <div class="">
+                <img src="src/berlian.png" alt="" class="w-80 h-50 items-center justify-center rounded-3xl">
+              </div>
+          </div>
+          </a>
+
+          <a href="">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-105">
+              <div class="">
+                <img src="src/figma.png" alt="" class="w-40 h-50 items-center justify-center rounded-3xl">
+              </div>
+          </div>
+          </a>
+
+        </div>
+        
+          
+
+      </div>
+
+    </section>
+
+    <section id="blog" class="bg-[#7A7A73]">
+      <div class="max-w-full mx-auto px-20 md-px-8 py-20 border-t border-slate-300 ">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-300 font-utama underline underline-offset-8 decoration-[#F8F3CE] decoration-4 uppercase tracking-widest ">My Blog</h2>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6">
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-3 flex flex-row items-center transition-transform duration-300 ease-in-out hover:scale-105">
+          
+            <div class="flex flex-col gap-3 mb-13 ">
+              <h4 class="text-slate-800 text-2xl font-bold font-utama px-3">Aug</h4>
+              <hr class="w-18 text-black">
+              <h4 class="text-slate-800 font-utama font-bold text-2xl px-5 py-1">24</h4>
+            </div>
+
+            <div class="ml-5">
+              <h5 class="text-[#847e53] text-lg font-bold font-utama uppercase tracking-widest leading-8">Jane Doe</h5>
+              <h2 class="text-black text-3xl font-bold font-utama tracking-tight">Review Jasa Website</h2>
+              <h5 class="text-slate-800 font-utama leading-13">Jasa bagus, good job dan cepat</h5>
+              <a href=""><h5 class="text-[#847e53] font-utama leading-10 cursor-pointer">Read More</h5></a>
+            </div>
+          
+          </div>
+
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-6 flex flex-row items-center transition-transform duration-300 ease-in-out hover:scale-105">
+          
+            <div class="flex flex-col gap-3 mb-13">
+              <h4 class="text-slate-800 text-2xl font-bold font-utama px-3">Aug</h4>
+              <hr class="w-18 text-black">
+              <h4 class="text-slate-800 font-utama font-bold text-2xl px-5 py-1">24</h4>
+            </div>
+
+            <div class="ml-5">
+              <h5 class="text-[#847e53] text-lg font-bold font-utama uppercase tracking-widest leading-8">Jane Doe</h5>
+              <h2 class="text-black text-3xl font-bold font-utama tracking-tight">Review Jasa Website</h2>
+              <h5 class="text-slate-800 font-utama leading-13">Jasa bagus, good job dan cepat</h5>
+              <a href=""><h5 class="text-[#847e53] font-utama leading-10 cursor-pointer">Read More</h5></a>
+            </div>
+          
+          </div>
+
+          <div class="rounded-xl bg-[#DDDAD0] shadow-2xl p-6 flex flex-row items-center transition-transform duration-300 ease-in-out hover:scale-105">
+          
+            <div class="flex flex-col gap-3 mb-13">
+              <h4 class="text-slate-800 text-2xl font-bold font-utama px-3">Aug</h4>
+              <hr class="w-18 text-black">
+              <h4 class="text-slate-800 font-utama font-bold text-2xl px-5 py-1">24</h4>
+            </div>
+
+            <div class="ml-5">
+              <h5 class="text-[#847e53] text-lg font-bold font-utama uppercase tracking-widest leading-8">Jane Doe</h5>
+              <h2 class="text-black text-3xl font-bold font-utama tracking-tight">Review Jasa Website</h2>
+              <h5 class="text-slate-800 font-utama leading-13">Jasa bagus, good job dan cepat</h5>
+              <a href=""><h5 class="text-[#847e53] font-utama leading-10 cursor-pointer">Read More</h5></a>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactMe" class="bg-[#57564F]">
+      <div class="max-w-full mx-auto px-4 md-px-8 py-30 border-t border-slate-300 ">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-300 font-utama underline underline-offset-8 decoration-[#F8F3CE] decoration-4 uppercase tracking-widest ">Contact Me</h2>
+          <p class="text-sm mt-5 text-white mb-6 font-utama">CONTACT US IF YOU WANT TO WORK TOGETHER</p>
+        </div>
+
+        <form class="bg-[#7A7A73] p-8  rounded-lg shadow-lg max-w-3xl mx-auto transition-transform duration-300 ease-in-out hover:scale-105">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label for="name" class="block text-sm mb-2 text-white">NAME</label>
+                <input type="text" id="name" name="name"
+                class="w-full px-3 py-2 bg-[#57564F] border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-[#BCA88D] text-white">
+            </div>
+        
+            <div>
+              <label for="email" class="block text-sm mb-2 text-white">EMAIL</label>
+              <input type="email" id="email" name="email"
+              class="w-full px-3 py-2 bg-[#57564F] border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-[#BCA88D] text-white">
+            </div>
+          
+          </div>
+
+          <div class="mb-4">
+              <label for="message" class="block text-sm mb-2 text-white">MESSAGE</label>
+              <textarea id="message" name="message" rows="4"
+              class="w-full px-3 py-2 bg-[#57564F] border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-[#BCA88D] text-white"></textarea>
+          </div>
+
+          <button type="submit"
+              class="bg-[#F8F3CE] hover:bg-[#BCA88D]  font-semibold px-6 py-2 rounded shadow-md transition cursor-pointer">
+              Send Message
+          </button>
+
+        </form>  
+      </div>
+    </section>
+
+    <footer class="bg-[#7A7A73] pt-12 border-t border-slate-300">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 ">
+      <!-- Map -->
+      <div class="rounded-xl overflow-hidden shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.4245842186206!2d-0.1584975!3d51.5237719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761acf33628211%3A0x445d7677a88322e1!2s221B%20Baker%20St%2C%20London%20NW1%206XE%2C%20Britania%20Raya!5e0!3m2!1sid!2sid!4v1756962935311!5m2!1sid!2sid" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- Address & Contact -->
+      <div class="flex flex-col justify-center text-[#F8F3CE]">
+        <h2 class="text-lg font-semibold mb-4">My Address</h2>
+
+        <!-- Address -->
+        <p class="flex items-start gap-3 text-gray-300 mb-4">
+          <i class="fas fa-map-marker-alt text-[#F8F3CE] mt-1"></i>
+          221B Baker Street, London, Inggris
+        </p>
+
+        <!-- Email -->
+        <p class="flex items-center gap-3 text-gray-300 mb-3">
+          <i class="fas fa-envelope text-[#F8F3CE]"></i>
+          <a href="mailto:info@jaylaa.com" class="hover:underline">enola@gmail.com</a>
+        </p>
+
+        <!-- Phone -->
+        <p class="flex items-center gap-3 text-gray-300 mb-6">
+          <i class="fas fa-phone text-[#F8F3CE]"></i>
+          +44 7xxx xxxxx
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-200 hover:text-[#F8F3CE] text-xl transition-transform duration-300 ease-in-out hover:scale-125"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-200 hover:text-[#F8F3CE] text-xl transition-transform duration-300 ease-in-out hover:scale-125"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-200 hover:text-[#F8F3CE] text-xl transition-transform duration-300 ease-in-out hover:scale-125"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-200 hover:text-[#F8F3CE] text-xl transition-transform duration-300 ease-in-out hover:scale-125"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-10 border-t border-slate-300 text-center py-4 text-gray-100 text-sm">
+      Copyright © 2024 — All Rights Reserved by 
+      <span class="text-[#F8F3CE] font-semibold">Holmes</span>
+    </div>
+  </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      AOS.init({
+        duration: reduceMotion ? 0 : 600,
+        once: true,
+      });
+
+      const btn = document.getElementById("hamburger");
+      const iconOpen = document.getElementById("icon-open");
+      const iconClose = document.getElementById("icon-close");
+      const menu = document.getElementById("main-menu");
+      const panel = document.getElementById("mobile-panel");
+
+      btn?.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        iconOpen.classList.toggle("hidden");
+        iconClose.classList.toggle("hidden");
+        panel.classList.toggle("hidden");
+      });
+
+      panel?.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          btn.setAttribute("aria-expanded", "false");
+          iconOpen.classList.remove("hidden");
+          iconClose.classList.add("hidden");
+          panel.classList.add("hidden");
+        });
+      });
+    </script>
+
+  </body>
+</html>

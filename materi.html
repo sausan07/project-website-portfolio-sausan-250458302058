@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- block artiny full elemen satu layar, dan kalau mau nambahin item baru dia nurun kebawah
+     block bisa nambahin heigh dn wight. DIV itu PEMBUNGKUS-->
+    <div class="bg-blue-300 block">kotak 1 (block)</div>
+    <div class="bg-blue-500 block">kotak 2 (block)</div>
+
+    <br />
+
+    <!-- inline artinya dia akan nempel ke samping, dan kalau mau nambahin item baru dia akan nempel ke samping juga, 
+     gedenya mneysuaikan konten tapi gbisa nambah heigh dn weight. SPAN itu TULISAN-->
+    <span class="bg-amber-300 inline">kotak 1 (inline)</span>
+    <span class="bg-amber-500 inline">kotak 2 (inline)</span>
+
+    <br /><br />
+
+    <!-- inline artinya dia akan nempel ke samping, dan kalau mau nambahin item baru dia akan nempel ke samping juga, 
+     gedenya mneysuaikan konten dan bisa diatur atau diganti heigh dn weight -->
+    <span class="bg-pink-300 inline-block w-24 h-12"
+      >kotak 1 (inline-block)</span
+    >
+    <span class="bg-pink-500 inline-block w-24 h-12"
+      >kotak 2 (inline-block)</span
+    >
+
+    <br /><br />
+
+    <!-- flex artinya dia akan nempel ke samping, dan kalau mau nambahin item baru dia akan nempel ke samping juga, 
+     gedenya mneysuaikan konten dan bisa diatur atau diganti heigh dn weight.
+     (PASTI BERDAMPINGAN DENGAN, Justify, Gap, Align/Item, Items)-->
+    <!-- JUSTIFY; atur arah horizontal -->
+    <!-- Align TIDAKADA, adanya ITEM; atur arah Vertikal -->
+    <!-- GAP; atur arah Item -->
+    <div class="flex gap-2 bg-green-300 p-2">
+      <div class="bg-green-500 w-16 h-16">kotak 1</div>
+      <div class="bg-green-600 w-16 h-16">kotak 2</div>
+      <div class="bg-green-700 w-16 h-16">kotak 3</div>
+    </div>
+
+    <br />
+
+    <!-- flex-col artinya dia akan nempel ke bawah, dan kalau mau nambahin item baru dia akan nempel ke bawah juga, 
+     gedenya mneysuaikan konten dan bisa diatur atau diganti heigh dn weight. Harus nambahin flex 2x biar gapnya kebaca
+     (PASTI BERDAMPINGAN DENGAN, Justify, Gap, Align, Items)-->
+    <div class="flex flex-col gap-2 bg-green-300 p-2">
+      <div class="bg-green-500 w-16 h-16">kotak 1</div>
+      <div class="bg-green-600 w-16 h-16">kotak 2</div>
+      <div class="bg-green-700 w-16 h-16">kotak 3</div>
+    </div>
+  </body>
+</html>
